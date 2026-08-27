@@ -1,0 +1,11 @@
+const express =require("express");
+const mongoose=require("mongoose");
+const path=require("path");
+mongoose.connect(process.env.MONGO_URI);
+const router=require("./routs");
+const app=express();
+app.set("view engine","ejs");
+app.set("views",path.join(__dirname,"./views"));
+app.use(express.urlencoded({extended:false}));
+app.use("/",router);
+app.listen(process.env.PORT);
