@@ -8,4 +8,5 @@ app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"./views"));
 app.use(express.urlencoded({extended:false}));
 app.use("/",router);
-app.listen(process.env.PORT);
+// app.listen(process.env.PORT);
+module.exports=app;
